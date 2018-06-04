@@ -1,0 +1,99 @@
+@mixin draw-progress($progress)
+    .pie
+        @if ($progress <= 50)
+            .right-side
+                display: none
+        @else
+            clip: rect(auto, auto, auto, auto)
+
+            .right-side
+                @include transform(rotate(180deg))
+
+        .left-side
+            $rotate: $progress * 3.6
+            @include transform(rotate($rotate * 1deg))
+
+// --
+@mixin size($w, $h)
+  height: $h
+  width: $w
+
+@mixin transform($value)
+  -webkit-transform: $value
+  -moz-transform: $value
+  -ms-transform: $value
+  -o-transform: $value
+  transform: $value
+
+@mixin pie-style($fillColor, $backgroundColor)
+    .pie-wrapper
+        .half-circle
+            border-color: $fillColor
+
+        .shadow
+            border-color: $backgroundColor
+
+
+.circle
+    margin-top: -1em
+
+.pie-wrapper
+    $size: 1em
+
+    @include size($size, $size)
+    display: inline-block
+    position: relative
+    margin-bottom: -1em
+
+    &, *
+        $value: border-box
+        -moz-box-sizing: $value
+        -webkit-box-sizing: $value
+        box-sizing: $value
+
+    .pie
+        @include size(100%, 100%)
+        clip: rect(0, $size, $size, $size / 2)
+        left: 0
+        position: absolute
+        top: 0
+
+    .half-circle
+        @include size(100%, 100%)
+        border-width: $size / 30
+        border-style: solid
+        border-radius: 50%
+        clip: rect(0, $size / 2, $size, 0)
+        position: absolute
+        left: 0
+        top: 0
+
+    .label
+        $font-size: $size / 3
+        $font-size-redo: $size * 3
+
+        border-radius: 50%
+        bottom: $font-size-redo / 10
+        cursor: default
+        display: block
+        font-size: $font-size
+        left: $font-size-redo / 10
+        line-height: $font-size-redo * 0.65
+        position: absolute
+        right: $font-size-redo / 10
+        text-align: center
+        top: $font-size-redo / 5
+        background: none
+
+    .shadow
+        @include size(100%, 100%)
+        border-width: $size / 30
+        border-style: solid
+        border-radius: 50%
+
+
+    $step: 5
+    $steps: round(100/$step)
+    @for $i from 0 through $steps
+        &.progress-#{$i * $step}
+            @include draw-progress($i * $step)

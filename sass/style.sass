@@ -1,0 +1,231 @@
+// Imports
+@import "circle"
+@import "griddle"
+@import "font-awesome"
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700)
+@import url(http://fonts.googleapis.com/css?family=Arimo:700)
+
+// Constrói a grid para 12 colunas
+@include griddle-build(12)
+
+@media screen and (max-width: 800px)
+    @include griddle-build(12, '--small')
+
+// CSS
+*
+    font-family: "Open Sans", sans-serif
+
+img
+    max-width: 100%
+    max-height: 100%
+
+.center-content
+    text-align: center
+
+.justify-content
+    text-align: justify
+
+.right-content
+    text-align: right
+
+h1
+    font: normal normal bold 75px/1 'Arimo', sans-serif
+    letter-spacing: -1px
+    margin: 20px 0
+
+h2
+    font: normal normal 300 30px/32px 'Open Sans', sans-serif
+    margin: 0 0 72px
+
+a
+    color: #FFF
+    text-decoration: none
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.75)
+
+// Componentes
+section, .section
+    box-sizing: border-box
+    min-height: 90vh
+    padding: 25px
+    color: #FFF
+
+    &.section--full
+        min-height: 100vh
+
+    .section__title
+        @extend h1
+        text-align: center
+
+    .nav-button
+        color: #FFF
+        border-color: #FFF
+
+        &:hover
+            background-color: #FFF
+            color: #333
+
+// Estilos personalizados
+body
+    background: url(../images/bg.png)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+.nav-button
+    padding: 10px
+    border: 3px solid #000
+    border-radius: 50%
+    transition: 200ms
+    margin-top: 10px
+    display: inline-block
+    width: 1.3em
+    height: 1.3em
+
+    &:hover
+        color: #F7F7F7
+        background: #333
+
+.history-entry
+    border-left: 7px solid #e21d72
+    background: #FFF
+    color: #333
+    margin-bottom: 10px
+
+    .institute
+        text-transform: uppercase
+        font-weight: bold
+
+    .title
+        font-weight: bold
+
+    .description
+        font-size: 0.9em
+        text-align: justify
+
+    .duration
+        text-align: right
+
+.form-group
+    margin-top: 10px
+
+    .control-label
+        @extend .right-content
+        margin-top: 5px
+        font-weight: bold
+
+    .form-control
+        width: 100%
+        padding: 5px
+        border: none
+        color: #333
+
+    textarea
+        max-width: 100%
+
+.button
+    border: none
+    padding: 5px
+    font-weight: bold
+    color: #FFF
+    background: #333
+    transition: 200ms
+
+    &:hover
+        color: #333
+        background: #FFF
+
+header
+    background: rgba(255, 255, 255, 0.75)
+    color: #333 !important
+
+    .nav-button
+        color: #333 !important
+        border-color: #333 !important
+
+        &:hover
+            background-color: #333 !important
+            color: #FFF !important
+
+#about
+    background: #f0440f
+
+#skills
+    background: rgba(0, 0, 0, 0.5)
+    .circle-section
+        font-size: 120px
+
+    .circle__label
+        font-size: 20px
+
+    @include pie-style(#00ACEE, rgba(255, 255, 255, 0.1))
+
+    .skill-img
+        width: 100%
+        background: #FFF
+        padding: 10px
+        border: 1px solid #555
+        height: 120px
+        line-height: 100px
+        box-sizing: border-box
+        margin: 10px 0
+
+        img
+            vertical-align: middle
+
+
+#education
+    background: #FAD21E // #1abc9c
+
+#profexp
+    background: rgba(0, 0, 0, 0.5)
+    // background: #1d72e2
+
+#portfolio
+    background: #333333
+
+    .thumb
+        a
+            border: none
+
+        img
+            border: 1px solid #FFF
+
+    .hidden-screens
+        display: none
+
+.fancybox-overlay
+    a
+        border: none
+
+#contact
+    background: rgba(0, 0, 0, 0.5)
+
+footer
+    background: #FFF
+    color: #333
+    margin: 0 !important
+    font-size: 0.9em
+
+    .grid__cell
+        padding: 20px
+        vertical-align: middle
+
+    .copyright
+        margin-top: 5px
+
+    .social-icons
+        font-size: 2em
+        vertical-align: middle
+
+        a
+            color: #333
+            border: none
+
+// Responsividade
+@media screen and (max-height: 600px)
+    section, .section
+        min-height: 600px
+
+        &.section--full
+            min-height: 640px

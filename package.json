@@ -1,0 +1,19 @@
+{
+  "name": "portifolio",
+  "version": "0.0.1",
+  "description": "Gabriel Teles' Portfolio",
+  "main": "index.html",
+  "dependencies": {
+    "gulp-bower": "^0.0.10",
+    "gulp": "^3.9.0",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Teles",
+  "license": "BSD-3-Clause"
+}

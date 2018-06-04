@@ -1,0 +1,36 @@
+{
+  "name": "Portfolio",
+  "version": "0.0.1",
+  "description": "Gabriel Teles' Portfolio",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "gabriel",
+    "teles",
+    "fullstack",
+    "dev",
+    "node",
+    "portfolio"
+  ],
+  "authors": [
+    "Gabriel Teles"
+  ],
+  "license": "BSD 3-Clause",
+  "homepage": "http://www.gabrielteles.com.br/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "griddle": "~0.3.0",
+    "normalize.css": "~3.0.3",
+    "components-font-awesome": "~4.3.0",
+    "smooth-scroll": "~1.0.1",
+    "lightbox2": "~2.8.0"
+  }
+}
